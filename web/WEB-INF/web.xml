@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <servlet>
+        <servlet-name>DangKiAccount</servlet-name>
+        <servlet-class>controller.CreateAccount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DangKiAccount</servlet-name>
+        <url-pattern>/account/register</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>List account</servlet-name>
+        <servlet-class>controller.ListAccount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>List account</servlet-name>
+        <url-pattern>/account/list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Detail account</servlet-name>
+        <servlet-class>controller.DetailAccount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Detail account</servlet-name>
+        <url-pattern>/account/detail</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>CreateClassroom</servlet-name>
+        <servlet-class>controller.CreateClassRoom</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateClassroom</servlet-name>
+        <url-pattern>/classroom/create</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListClassroom</servlet-name>
+        <servlet-class>controller.ListClassRoom</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListClassroom</servlet-name>
+        <url-pattern>/classroom/list</url-pattern>
+    </servlet-mapping>
+    
+    <filter>
+        <filter-name>ObjectifyFiler</filter-name>
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ObjectifyFiler</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>ObjectifyRegisterFilter</filter-name>
+        <filter-class>filter.ObjectifyRegisterFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ObjectifyRegisterFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
