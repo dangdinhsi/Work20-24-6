@@ -70,7 +70,7 @@
             }
         %>
     </div>
-    <div>Image <input type="file" name="myFile"></div>
+    <div>Image <input type="file" name="imageUrl"></div>
     <div>
         <input type="submit" value="Submit">
         <input type="reset" value="Reset">

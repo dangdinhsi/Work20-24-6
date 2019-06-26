@@ -40,7 +40,7 @@ public class CreateClassRoom extends HttpServlet {
 
 
         Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(req);
-        List<BlobKey> blobKeys = blobs.get("myFile");
+        List<BlobKey> blobKeys = blobs.get("imageUrl");
         if (blobKeys != null && blobKeys.size() > 0) {
             ServingUrlOptions servingUrlOptions = ServingUrlOptions.Builder.withBlobKey(blobKeys.get(0));
             classroom.setImageUrl(imagesService.getServingUrl(servingUrlOptions));

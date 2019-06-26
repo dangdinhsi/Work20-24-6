@@ -11,30 +11,54 @@
 <%
     List<Classroom> list =(List<Classroom>) request.getAttribute("list");
 %>
+<style>
+    .tableTh{
+        color: #798c73	;
+        text-align: center;
+    }
+</style>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
 
-<h1>Account List</h1>
-<ul>
+<h1>Classroom list</h1>
+<%--<ul>--%>
+<%--    <%--%>
+<%--        for (int i = 0; i < list.size(); i++) {--%>
+<%--    %>--%>
+<%--    <li>--%>
+<%--        <%= list.get(i).getName()%> - <%= list.get(i).getDescription()%>--%>
+
+<%--        <img src="<%=list.get(i).getImageUrl()%>" alt="" style="width: 200px">--%>
+
+
+<%--    </li>--%>
+<%--    <%--%>
+<%--        }--%>
+<%--    %>--%>
+
+<%--</ul>--%>
+
+<table border="2px" bordercolor="#8c7373">
+    <tr class="tableTh">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Illustration</th>
+    </tr>
     <%
         for (int i = 0; i < list.size(); i++) {
     %>
-    <li>
-        <%= list.get(i).getName()%> - <%= list.get(i).getDescription()%>
-
-        <img src="<%=list.get(i).getImageUrl()%>" alt="" style="width: 200px">
-
-
-    </li>
+    <tr class="tableTh">
+        <td><%=list.get(i).getName()%></td>
+        <td><%=list.get(i).getDescription()%></td>
+        <td><img src="<%=list.get(i).getImageUrl()%>" alt="" style="width: 100px"></td>
+    </tr>
     <%
         }
     %>
 
-</ul>
-
-
+</table>
 </body>
 </html>
